@@ -1,0 +1,97 @@
+.gameContainer{
+    display: none;
+}
+
+/*  */
+body{
+    font-family:'Gill Sans', 'Gill Sans MT','Trebuchet MS', sans-serif;
+    font-size: 20px;
+    background-color: rgb(39, 219, 156);
+
+}
+.container{
+    width: 330px;
+    margin: 20px auto 0 auto;
+    /* border:1px solid red; */
+    text-align: center;
+}
+.enterPlayer{
+    background-color: rgb(214, 210, 210);
+    height:130px;
+    border-radius: 5px 5px 5px 5px;
+    border: none;
+    padding:25px 15px 0px 15px;
+    /* width: 20%; */
+}
+
+#game{
+    background-color: none;
+    border-radius: none;
+    }
+.enterPlayer span{
+    padding: 4px 4px;
+    text-align: center;
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+}
+input{
+    width: 63%;
+    padding: 4px 4px;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    font-size: 20px;
+
+}
+.playerDetails{
+    margin-bottom: 5px;
+    /* border:1px solid red; */
+}
+button{
+    margin-top: 10px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid transparent;
+    font-size: 15px;
+    padding: 8px;
+}
+/*  */
+.box{
+	float: left;
+	width: 100px;
+	height: 120px;
+	border: 1px solid #000;
+	transition: all .25s ease-in-out;
+	font-size: 85px;
+	text-align: center;
+	line-height: 100px; 
+	cursor: pointer;
+  }
+
+.box:hover{
+	background: rgb(174, 244, 255);
+	color: rgb(108, 108, 108);
+}
+#undoResetButton{
+    display:none;
+}
+#winnerDisplay{
+    padding: 4px 4px;
+    text-align: center;
+    /* background-color: #e9ecef; */
+    border-radius: 0.25rem;
+    width:30%;
+    margin:0 auto;
+    margin-top:1%;
+    font-size:25px;
+    text-transform:uppercase;
+    color:white;
+}
+.uRButton{
+    padding:8px 30px 8px 30px;
+}
