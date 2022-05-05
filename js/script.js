@@ -3,6 +3,8 @@ var playerName = document.getElementById('enterPlayer')
 var undoResetButton = document.getElementById('undoResetButton');
 var player1 = document.getElementById('player1')
 var player2 = document.getElementById('player2')
+
+
 var winnerDisplay = document.getElementById('winnerDisplay')
 
 var currentId;
@@ -10,7 +12,16 @@ count = 0;
 list = [0, 1, 0, 1, 0, 1, 0, 1, 0]
 
 
+
 document.getElementById('button').addEventListener("click", function (event) {
+
+    if (player1.value == null) {
+        alert("Enter the Player Names")
+        playerName.style.display = "block";
+        gameContainer.style.display = "none";
+
+    }
+    else{
     playerName.style.display = "none";
     gameContainer.style.display = "block";
     console.log(event.target)
@@ -18,6 +29,7 @@ document.getElementById('button').addEventListener("click", function (event) {
     console.log(player2.value)
     undoResetButton.style.display = "block"
     // winnerDisplay.style.backgroundColor="black";
+}
 
 })
 
@@ -46,10 +58,13 @@ document.getElementById('gameContainer').addEventListener("click", function (eve
         }
     }
     console.log(list)
+
+
     if (count >= 5) {
         checkWinner()
-       // notAllowed()
+
     }
+
 })
 
 function checkWinner() {
@@ -76,6 +91,8 @@ function checkWinner() {
             applyColor(6, 7, 8)
         }
 
+        notEdit()
+
     }
     //column
     if (list[0] == list[3] && list[3] == list[6] || list[1] == list[4] && list[4] == list[7] || list[2] == list[5] && list[5] == list[8]) {
@@ -101,7 +118,7 @@ function checkWinner() {
             applyColor(2, 5, 8)
         }
 
-
+        notEdit()
     }
     //diagonal
     if (list[0] == list[4] && list[4] == list[8] || list[2] == list[4] && list[4] == list[6]) {
@@ -122,8 +139,9 @@ function checkWinner() {
         else {
             applyColor(2, 4, 6)
         }
-
+        notEdit()
     }
+
 
 }
 
@@ -161,24 +179,35 @@ function applyColor(...arguments) {
     }
 }
 
-
-function notAllowed() {
-    if (winnerDisplay.innerHTML === `${player1.value} Winner` && count >5) {
-        count
-        console.log(winnerDisplay.innerHTML);
-        alert("not allowed")
-        console.log(currentId)
-        console.log(count)
-        //document.getElementById(currentId).innerHTML = "";
-
+function notEdit() {
+    console.log(list)
+    for (i = 0; i < list.length; i++) {
+        console.log(list[i])
+        console.log(isNaN(list[i]))
+        if (isNaN(list[i]) == false) {
+            list[i] = "NA"
+        }
     }
-    else if (winnerDisplay.innerHTML ===`${player2.value} Winner` && count >5) {
-        count--;
-        console.log(winnerDisplay.innerHTML);
-        alert("not allowed")
-        console.log(currentId)
-        console.log(count)
-        // document.getElementById(currentId).innerHTML = "";
-    }
-
 }
+// notEdit()
+
+// function notAllowed() {
+//     if (winnerDisplay.innerHTML === `${player1.value} Winner` && count >5) {
+//         count
+//         console.log(winnerDisplay.innerHTML);
+//         alert("not allowed")
+//         console.log(currentId)
+//         console.log(count)
+//         //document.getElementById(currentId).innerHTML = "";
+
+//     }
+//     else if (winnerDisplay.innerHTML ===`${player2.value} Winner` && count >5) {
+//         count--;
+//         console.log(winnerDisplay.innerHTML);
+//         alert("not allowed")
+//         console.log(currentId)
+//         console.log(count)
+//         // document.getElementById(currentId).innerHTML = "";
+//     }
+
+// }

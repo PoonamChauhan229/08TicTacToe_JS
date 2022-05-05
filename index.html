@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
-    
 
-    <title>GameApp</title>
+
+    <title>TictacToe</title>
 </head>
 
 <body>
@@ -17,18 +17,21 @@
         <span id="game">Tic Tac Toe</span>
     </div>
     <div id="winnerDisplay"></div>
-    <div class="container enterPlayer" id="enterPlayer">
-        <div class="playerDetails">
-            <span>Player 1:</span>
-            <input  id='player1' type="text" />
-        </div>
-        <div class="playerDetails">
-            <span>Player 2:</span>
-            <input id='player2'type="text" />
-        </div>
-        <button id="button" type="button">Play Now</button>
 
+    <div class="container enterPlayer" id="enterPlayer">
+       
+            <div class="playerDetails">
+                <span>Player 1:</span>
+                <input id='player1' type="text" required />
+            </div>
+            <div class="playerDetails">
+                <span>Player 2:</span>
+                <input id='player2' type="text" required />
+            </div>
+            <button id="button" type="button">Play Now</button>
+        
     </div>
+
 
     <div class="container gameContainer" id="gameContainer">
         <div class="box" style="border-left: 0; border-top: 0" id="0"></div>
@@ -40,9 +43,9 @@
         <div class="box" style="border-left: 0; border-bottom: 0" id="6"></div>
         <div class="box" style="border-bottom: 0" id="7"></div>
         <div class="box" style="border-right: 0; border-bottom: 0" id="8"></div>
-               
+
     </div>
-    <div class='container'id="undoResetButton">
+    <div class='container' id="undoResetButton">
         <button class="uRButton" type="button" onclick="undo()">Undo</button>
         <button class="uRButton" type="button" onclick="reset()">Reset</button>
     </div>
